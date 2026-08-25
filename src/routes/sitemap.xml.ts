@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-// دامنه اصلی سایت را دقیق وارد کنید
-const BASE_URL = "https://chadoor.ir";
+// دامنه اصلی سایت
+const BASE_URL = "https://chadooor.ir";
 
 interface SitemapEntry {
   path: string;
@@ -18,7 +18,7 @@ interface SitemapEntry {
   priority?: string;
 }
 
-export const Route = createFileRoute("/sitemap/xml")({
+export const Route = createFileRoute("/sitemap[.]xml")({
   server: {
     handlers: {
       GET: async () => {
@@ -27,6 +27,18 @@ export const Route = createFileRoute("/sitemap/xml")({
             path: "/",
             changefreq: "weekly",
             priority: "1.0",
+          },
+
+          {
+            path: "/about",
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+
+          {
+            path: "/products",
+            changefreq: "weekly",
+            priority: "0.9",
           },
 
           {
@@ -69,6 +81,24 @@ export const Route = createFileRoute("/sitemap/xml")({
             path: "/services/amol",
             changefreq: "monthly",
             priority: "0.9",
+          },
+
+          {
+            path: "/blog",
+            changefreq: "weekly",
+            priority: "0.8",
+          },
+
+          {
+            path: "/blog/tent-repair-guide",
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+
+          {
+            path: "/blog/canvas-tent",
+            changefreq: "monthly",
+            priority: "0.7",
           },
 
           {
