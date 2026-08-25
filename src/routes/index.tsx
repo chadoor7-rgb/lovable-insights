@@ -1,15 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram, Mail, Phone, Send } from "lucide-react";
 
+import { DEFAULT_BUSINESS, phoneHref } from "@/lib/business-settings";
+
 const CONTACT = {
-  phone: "09118031241",
-  phoneHref: "tel:+989118031241",
-  email: "chadoor7@gmail.com",
-  whatsapp: "https://wa.me/989118031241",
-  telegram: "https://t.me/gattent",
-  instagram1: "https://instagram.com/chadoor_",
-  instagram2: "https://instagram.com/chadortent.ir",
+  phone: DEFAULT_BUSINESS.phone,
+  phoneHref: phoneHref(DEFAULT_BUSINESS.phone),
+  email: DEFAULT_BUSINESS.email,
+  whatsapp: DEFAULT_BUSINESS.whatsapp,
+  telegram: DEFAULT_BUSINESS.telegram,
+  instagram1: DEFAULT_BUSINESS.instagram1,
+  instagram2: DEFAULT_BUSINESS.instagram2,
 };
+
 
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
