@@ -135,12 +135,21 @@ function HomePage() {
             </p>
           </div>
 
-          <a
-            href={CONTACT.phoneHref}
-            className="rounded-xl bg-black px-5 py-3 text-sm font-bold text-white"
-          >
-            تماس با ما
-          </a>
+          <div className="flex items-center gap-3">
+            <Link
+              to="/settings"
+              className="rounded-xl border px-4 py-3 text-sm font-bold text-gray-700"
+            >
+              تنظیمات کسب‌وکار
+            </Link>
+            <a
+              href={CONTACT.phoneHref}
+              className="rounded-xl bg-black px-5 py-3 text-sm font-bold text-white"
+            >
+              تماس با ما
+            </a>
+          </div>
+
         </div>
       </header>
 
