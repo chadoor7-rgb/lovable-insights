@@ -373,7 +373,7 @@ function HomePage() {
     </main>
   );
 }
-function ServiceCard({
+function ServiceCard
   slug,
   title,
   text,
