@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, Mail, Phone, Send } from "lucide-react";
 
 import { DEFAULT_BUSINESS, phoneHref } from "@/lib/business-settings";
@@ -135,13 +135,7 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
-            <Link
-              to="/settings"
-              className="rounded-xl border px-4 py-3 text-sm font-bold text-gray-700"
-            >
-              تنظیمات کسب‌وکار
-            </Link>
+              
             <a
               href={CONTACT.phoneHref}
               className="rounded-xl bg-black px-5 py-3 text-sm font-bold text-white"
