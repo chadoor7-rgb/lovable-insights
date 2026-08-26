@@ -45,7 +45,7 @@ const SERVICE_DETAILS: Record<
       "طراحی و تولید انواع چادر مسافرتی متناسب با نیاز شما، تعداد نفرات و شرایط آب‌وهوایی.",
     features: [
       "انتخاب پارچه مناسب با کاربری",
-      "دوخت دوخت سفارشی و برش",
+ "دوخت سفارشی و برش دقیق",
       "تنظیم تعداد درب و پنجره",
       "تحویل سریع و گارانتی دوخت",
     ],
@@ -113,6 +113,27 @@ export const Route = createFileRoute("/services/$slug")({
         },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
+        scripts: [
+  {  {
+    type: "application/ld+json",
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: service?.title,
+      description: service?.description,
+      provider: {
+        "@type": "LocalBusiness",
+        name: "چادردوزی جزیره",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "آمل",
+          addressCountry: "IR",
+        },
+        telephone: CONTACT.phone,
+      },
+    }),
+  },
+],
       ],
     };
   },
@@ -198,13 +219,7 @@ function Header() {
           </p>
         </Link>
 
-        <div className="flex items-center gap-3">
-          <Link
-            to="/settings"
-            className="rounded-xl border px-4 py-3 text-sm font-bold text-gray-700"
-          >
-            تنظیمات کسب‌وکار
-          </Link>
+        <div className="flex items-center gap-3"><div className="flex items-center gap-3">
           <a
             href={CONTACT.phoneHref}
             className="rounded-xl bg-black px-5 py-3 text-sm font-bold text-white"
