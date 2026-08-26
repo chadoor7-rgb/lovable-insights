@@ -192,34 +192,41 @@ function HomePage() {
           </h2>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            <ServiceCard
-              title="تعمیر چادر مسافرتی"
-              text="ترمیم پارگی، دوخت و رفع آسیب‌های انواع چادر مسافرتی."
-            />
+        <ServiceCard
+  slug="tent-repair"
+  title="تعمیر چادر مسافرتی"
+  text="ترمیم پارگی، دوخت و رفع آسیب‌های انواع چادر مسافرتی."
+/>
 
-            <ServiceCard
-              title="تعمیر فنر چادر"
-              text="تعمیر و تعویض فنر چادرهای مسافرتی و رفع مشکل جمع نشدن چادر."
-            />
+<ServiceCard
+  slug="spring-repair"
+  title="تعمیر فنر چادر"
+  text="تعمیر و تعویض فنر چادرهای مسافرتی و رفع مشکل جمع نشدن چادر."
+/>
 
-            <ServiceCard
-              title="تولید چادر مسافرتی"
-              text="طراحی و تولید انواع چادر مسافرتی متناسب با نیاز شما."
-            />
+<ServiceCard
+  slug="tent-production"
+  title="تولید چادر مسافرتی"
+  text="طراحی و تولید انواع چادر مسافرتی متناسب با نیاز شما."
+/>
 
-            <ServiceCard
-              title="تولید چادر برزنتی"
-              text="دوخت و تولید چادرهای برزنتی با استفاده از پارچه مناسب."
-            />
+<ServiceCard
+  slug="canvas-production"
+  title="تولید چادر برزنتی"
+  text="دوخت و تولید چادرهای برزنتی مقاوم برای کاربری‌های مختلف."
+/>
 
-            <ServiceCard
-              title="ترمیم پارگی چادر"
-              text="ترمیم پارگی و آسیب‌های پارچه چادر با دوخت تخصصی."
-            />
+<ServiceCard
+  slug="tear-repair"
+  title="ترمیم پارگی چادر"
+  text="ترمیم پارگی و آسیب‌های پارچه چادر با دوخت تخصصی."
+/>
 
-            <ServiceCard
-              title="چادردوزی در آمل"
-              text="ارائه خدمات تخصصی چادر و برزنت در آمل."
+<ServiceCard
+  slug="amol"
+  title="چادردوزی در آمل"
+  text="ارائه خدمات تخصصی چادر و برزنت در آمل."
+/> 
             />
           </div>
         </div>
@@ -366,15 +373,34 @@ function HomePage() {
     </main>
   );
 }
-
 function ServiceCard({
+  slug,
   title,
   text,
 }: {
+  slug: string;
   title: string;
   text: string;
 }) {
   return (
+    <Link
+      to={`/services/${slug}`}
+      className="group block rounded-2xl border bg-[#fcfbf8] p-6 transition hover:-translate-y-1 hover:shadow-lg"
+    >
+      <h3 className="text-xl font-bold group-hover:text-black">
+        {title}
+      </h3>
+
+      <p className="mt-3 leading-7 text-gray-600">
+        {text}
+      </p>
+
+      <span className="mt-5 block text-sm font-bold text-gray-900">
+        مشاهده جزئیات خدمات ←
+      </span>
+    </Link>
+  );
+}  return (
     <article className="rounded-2xl border bg-[#fcfbf8] p-6">
       <h3 className="text-xl font-bold">{title}</h3>
       <p className="mt-3 leading-7 text-gray-600">{text}</p>
