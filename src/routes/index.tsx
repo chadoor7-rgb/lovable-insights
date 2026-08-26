@@ -1,6 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Mail, Phone, Send } from "lucide-react";
-
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { DEFAULT_BUSINESS, phoneHref } from "@/lib/business-settings";
 
 const CONTACT = {
@@ -143,8 +141,6 @@ function HomePage() {
               تماس با ما
             </a>
           </div>
-
-        </div>
       </header>
 
       {/* Hero */}
@@ -227,7 +223,6 @@ function HomePage() {
   title="چادردوزی در آمل"
   text="ارائه خدمات تخصصی چادر و برزنت در آمل."
 /> 
-            />
           </div>
         </div>
       </section>
@@ -373,7 +368,7 @@ function HomePage() {
     </main>
   );
 }
-function ServiceCard
+function ServiceCard({
   slug,
   title,
   text,
@@ -400,10 +395,4 @@ function ServiceCard
       </span>
     </Link>
   );
-}  return (
-    <article className="rounded-2xl border bg-[#fcfbf8] p-6">
-      <h3 className="text-xl font-bold">{title}</h3>
-      <p className="mt-3 leading-7 text-gray-600">{text}</p>
-    </article>
-  );
-}
+  }
